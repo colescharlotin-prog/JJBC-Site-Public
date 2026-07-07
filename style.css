@@ -1,0 +1,352 @@
+/* =========================================================
+   Cabinet Notarial Jean Jacques B. CHARLOTIN — Site public
+   Palette : navy profond + or, dans la continuite du logo
+   et de l'identite deja etablie pour le systeme JJBC.
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    --navy-deep: #0d1a30;
+    --navy-mid: #17294a;
+    --navy-line: #2a4570;
+    --gold: #c8a13b;
+    --gold-light: #ddc06f;
+    --cream: #f8f5ec;
+    --burgundy: #7a2e3a;
+    --text-dark: #201d19;
+    --text-muted: #55524a;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    font-family: "Inter", Arial, sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+h1, h2, h3, .eyebrow {
+    font-family: "Playfair Display", Georgia, serif;
+}
+
+/* ---------- BARRE DE NAVIGATION ---------- */
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 6vw;
+    background: var(--navy-deep);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid var(--navy-line);
+}
+
+.nav .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.nav .brand img {
+    height: 42px;
+}
+
+.nav .brand span {
+    color: var(--gold-light);
+    font-family: "Playfair Display", serif;
+    font-size: 1.05em;
+    line-height: 1.25;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 34px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav ul li a {
+    color: #d8dce6;
+    text-decoration: none;
+    font-size: 0.92em;
+    letter-spacing: 0.02em;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav ul li a:hover,
+.nav ul li a.actif {
+    color: var(--gold-light);
+    border-color: var(--gold);
+}
+
+/* ---------- SECTION EYEBROW (petit libelle au-dessus des titres) ---------- */
+.eyebrow {
+    display: inline-block;
+    color: var(--gold);
+    font-style: italic;
+    font-size: 1.05em;
+    letter-spacing: 0.03em;
+    margin-bottom: 6px;
+}
+
+/* ---------- DIVISEUR SIGNATURE : double filet, comme un sceau/certificat ---------- */
+.filet-double {
+    width: 92px;
+    height: 10px;
+    margin: 18px 0 26px;
+    border-top: 2px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+}
+
+.filet-double.centre { margin-left: auto; margin-right: auto; }
+
+/* ---------- HERO (page d'accueil) ---------- */
+.hero {
+    position: relative;
+    min-height: 82vh;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(120deg, rgba(13, 26, 48, 0.92), rgba(13, 26, 48, 0.72)),
+        url("assets/fond-ecran.jpg") center 18% / cover no-repeat;
+    color: var(--cream);
+}
+
+.hero-contenu {
+    max-width: 640px;
+    padding: 0 6vw;
+}
+
+.hero h1 {
+    font-size: 2.6em;
+    font-weight: 600;
+    line-height: 1.18;
+    margin: 0 0 18px;
+    color: white;
+}
+
+.hero h1 em {
+    color: var(--gold-light);
+    font-style: italic;
+}
+
+.hero p.lead {
+    font-size: 1.12em;
+    color: #dfe3ec;
+    max-width: 520px;
+    margin: 0 0 30px;
+}
+
+.boutons { display: flex; gap: 16px; flex-wrap: wrap; }
+
+.btn-principal, .btn-secondaire {
+    display: inline-block;
+    padding: 13px 26px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.95em;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.btn-principal {
+    background: var(--gold);
+    color: var(--navy-deep);
+}
+
+.btn-secondaire {
+    background: transparent;
+    color: var(--cream);
+    border: 1px solid rgba(248, 245, 236, 0.4);
+}
+
+.btn-principal:hover, .btn-secondaire:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+}
+
+/* ---------- SECTIONS GENERALES ---------- */
+section {
+    padding: 90px 6vw;
+}
+
+section.alt { background: white; }
+
+.section-tete {
+    max-width: 640px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.section-tete h2 {
+    font-size: 2em;
+    color: var(--navy-deep);
+    margin: 0;
+    font-weight: 600;
+}
+
+/* ---------- GRILLE DE SERVICES ---------- */
+.grille-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 26px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.service {
+    background: var(--cream);
+    border: 1px solid #e6dfc9;
+    border-top: 3px solid var(--gold);
+    padding: 30px 26px;
+    border-radius: 6px;
+}
+
+.service .code {
+    display: inline-block;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    color: var(--gold);
+    font-size: 0.95em;
+    margin-bottom: 10px;
+}
+
+.service h3 {
+    margin: 0 0 10px;
+    font-size: 1.25em;
+    color: var(--navy-deep);
+}
+
+.service p {
+    color: var(--text-muted);
+    font-size: 0.95em;
+    margin: 0;
+}
+
+/* ---------- A PROPOS ---------- */
+.apropos-grille {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.apropos-grille img {
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: 0 12px 30px rgba(13, 26, 48, 0.25);
+}
+
+.apropos-texte h2 {
+    color: var(--navy-deep);
+    font-size: 1.9em;
+    margin-top: 0;
+}
+
+.apropos-texte p {
+    color: var(--text-muted);
+}
+
+.valeurs {
+    display: flex;
+    gap: 30px;
+    margin-top: 26px;
+    flex-wrap: wrap;
+}
+
+.valeurs div { flex: 1; min-width: 140px; }
+
+.valeurs h4 {
+    color: var(--navy-deep);
+    margin: 0 0 4px;
+    font-size: 1em;
+}
+
+.valeurs p { font-size: 0.88em; margin: 0; }
+
+/* ---------- CONTACT ---------- */
+.contact-grille {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-infos h3 {
+    color: var(--navy-deep);
+    margin-top: 0;
+}
+
+.contact-infos p { color: var(--text-muted); margin: 6px 0 18px; }
+
+.contact-infos .ligne {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+    align-items: baseline;
+}
+
+.contact-infos .ligne strong { color: var(--navy-deep); min-width: 90px; }
+
+form.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+form.contact-form input,
+form.contact-form textarea {
+    padding: 12px 14px;
+    border: 1px solid #d4cdb8;
+    border-radius: 5px;
+    font-family: "Inter", sans-serif;
+    font-size: 0.95em;
+}
+
+form.contact-form textarea { min-height: 120px; resize: vertical; }
+
+form.contact-form button {
+    align-self: flex-start;
+    padding: 13px 28px;
+    background: var(--gold);
+    color: var(--navy-deep);
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: filter 0.15s ease;
+}
+
+form.contact-form button:hover { filter: brightness(1.08); }
+
+/* ---------- PIED DE PAGE ---------- */
+footer {
+    background: var(--navy-deep);
+    color: #9aa3b8;
+    padding: 34px 6vw;
+    text-align: center;
+    font-size: 0.85em;
+}
+
+footer .filet-double { margin-bottom: 16px; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 760px) {
+    .nav ul { display: none; }
+    .hero h1 { font-size: 1.9em; }
+    .apropos-grille, .contact-grille { grid-template-columns: 1fr; }
+}
