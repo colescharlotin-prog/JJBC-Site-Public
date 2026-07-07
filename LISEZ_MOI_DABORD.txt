@@ -1,91 +1,60 @@
-Site public — Cabinet Notarial Jean Jacques B. CHARLOTIN
-================================================================
+Site public JJBC — Livraison complete (2026-07-07)
+===========================================================
 
-CE QUE CONTIENT CE ZIP
------------------------
-Un site web complet, 4 pages, style navy + or (coherent avec ton
-logo et le systeme JJBC), completement independant du dashboard
-interne :
-
-  index.html      -> Accueil (photo, presentation, boutons d'action)
-  services.html   -> Tes 5 categories d'actes, presentees au public
-  a-propos.html   -> Presentation du cabinet
-  contact.html    -> Coordonnees + formulaire de contact
-  style.css       -> Toute la mise en forme
-  assets/         -> logo + photo
-
-
-⚠️ A FAIRE AVANT DE PUBLIER — remplir tes vraies coordonnees
-------------------------------------------------------------------
-Ouvre contact.html avec le Bloc-notes, cherche les 4 lignes marquees
-"[ A COMPLETER ]" et remplace par :
-  - La vraie adresse du cabinet
-  - Le vrai numero de telephone
-  - La vraie adresse email
-  - Remplace aussi "REMPLACE_PAR_EMAIL_DU_CABINET@exemple.com" dans
-    la ligne "action=mailto:..." par cette meme adresse email
-
-
-⚠️ A PROPOS DU FORMULAIRE DE CONTACT
+CE QUE CONTIENT CE ZIP — TOUT, A JOUR
 ------------------------------------------
-Ce formulaire utilise la methode la plus simple possible (mailto) :
-quand quelqu'un clique "Envoyer la demande", ca ouvre SON logiciel
-de messagerie (Outlook, Gmail, etc.) avec le message deja rempli,
-pret a envoyer. Ce n'est pas automatique a 100% (la personne doit
-cliquer "Envoyer" dans son propre logiciel de messagerie), mais ca
-ne demande aucun serveur ni compte supplementaire.
 
-Si tu veux plus tard un vrai formulaire qui envoie automatiquement
-sans ouvrir de logiciel de messagerie, on peut connecter un service
-gratuit comme Formspree (formspree.io) — dis-le moi si tu veux qu'on
-fasse ca dans une prochaine session.
-
-
-DEPLOIEMENT — MEME METHODE QUE POUR JJBC
-----------------------------------------------
-
-ETAPE 1 — Ajoute ce contenu a ton depot GitHub
-  Cree un nouveau dossier, par exemple :
-    Development/Frontend/site-public/
-  Glisse-y tous les fichiers de ce zip (index.html, services.html,
-  a-propos.html, contact.html, style.css, assets/)
-
-ETAPE 2 — GitHub Desktop
-  Summary : "Ajout du site web public du cabinet"
-  Commit to main -> Push origin
-
-ETAPE 3 — Nouveau site statique sur Render
-  1. Render -> New -> Static Site
-  2. Choisis colescharlotin-prog/JJBC (meme depot)
-  3. Name : jjbc-site-public
-  4. Root Directory : Development/Frontend/site-public
-  5. Build Command : (laisse vide)
-  6. Publish Directory : .
-  7. Deploy static site
-
-  Tu obtiendras une adresse du genre :
-    https://jjbc-site-public.onrender.com
+  index.html          -> Accueil (SEO ajoute)
+  services.html       -> Services (SEO ajoute)
+  a-propos.html        -> A propos (photo a gauche, SEO ajoute)
+  contact.html         -> Contact (email corrige, Formspree, QR ajoute)
+  style.css            -> Menu mobile corrige (bug d'affichage regle)
+  robots.txt            -> NOUVEAU (pour Google)
+  sitemap.xml           -> NOUVEAU (pour Google)
+  assets/logo-jjbc.png
+  assets/fond-ecran.jpg
+  assets/qr-contact.png -> NOUVEAU (QR carte de contact avec logo)
 
 
-ETAPE 4 (OPTIONNELLE) — Nom de domaine personnalise
-----------------------------------------------------------
-Comme discute, un nom de domaine (ex: cabinetjjbc.com) coute
-generalement 10-15$/an. Pour l'acheter et le connecter :
+RECAPITULATIF DE TOUT CE QUI A ETE CORRIGE/AJOUTE AUJOURD'HUI
+------------------------------------------------------------------
 
-  1. Achete le domaine sur un site comme Namecheap ou Google Domains
-  2. Dans Render, va sur ton service "jjbc-site-public" -> Settings
-     -> Custom Domains -> Add Custom Domain
-  3. Suis les instructions affichees (ajouter un enregistrement DNS
-     chez ton fournisseur de domaine)
-
-Dis-moi quand tu es pret pour cette etape, je te guiderai precisement
-comme pour Cloudflare/Supabase/Render ce soir.
+1. Bug menu mobile corrige (le menu disparaissait completement sur
+   telephone, sans aucun moyen de naviguer)
+2. Referencement Google ajoute (descriptions par page, apercus pour
+   reseaux sociaux, icone d'onglet, plan du site, fichier robots)
+3. Adresse email corrigee sur la page Contact
+4. QR code de la carte de contact ajoute sur la page Contact, avec
+   legende
 
 
-TEST
---------
-Une fois deploye, verifie :
-  1. Les 4 pages s'affichent et le menu de navigation fonctionne
-  2. Le logo et la photo apparaissent bien
-  3. Sur la page Contact, clique "Envoyer la demande" -> verifie que
-     ton logiciel de messagerie s'ouvre avec le message pre-rempli
+INSTALLATION
+----------------
+
+1. Glisse-depose TOUT le contenu de ce zip directement dans
+   C:\JJBC-Site-Public\ (remplace tout, y compris le dossier assets)
+2. GitHub Desktop (depot JJBC-Site-Public) :
+   Summary : "Mise a jour complete : mobile, SEO, QR, email"
+   Commit to main -> Push origin
+3. Attends 1-2 minutes
+4. Va sur https://cabinetnotarialjjbc.com puis Ctrl+F5
+
+
+TESTS A FAIRE
+-----------------
+
+1. Sur ton telephone : verifie que le menu (Accueil/Services/A propos/
+   Contact) s'affiche bien maintenant, meme sur petit ecran
+2. Page Contact : verifie l'email affiche, et le QR avec sa legende
+   en dessous des coordonnees
+3. Remplis le formulaire de contact -> verifie que l'email arrive
+   dans charlotinjeanbjacques@gmail.com
+4. Scanne le QR de la page Contact avec ton telephone -> verifie
+   qu'il propose bien d'ajouter le contact
+
+
+PROCHAINE ETAPE (SEO), UNE FOIS TOUT CONFIRME EN LIGNE
+-----------------------------------------------------------
+Va sur https://search.google.com/search-console
+Ajoute la propriete cabinetnotarialjjbc.com
+Soumets https://cabinetnotarialjjbc.com/sitemap.xml

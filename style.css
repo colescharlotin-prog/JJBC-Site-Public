@@ -346,7 +346,9 @@ footer .filet-double { margin-bottom: 16px; }
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 760px) {
-    .nav ul { display: none; }
+    .nav { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .nav ul { gap: 18px; flex-wrap: wrap; width: 100%; }
+    .nav ul li a { font-size: 0.85em; }
     .hero h1 { font-size: 1.9em; }
     .apropos-grille, .contact-grille { grid-template-columns: 1fr; }
 }
